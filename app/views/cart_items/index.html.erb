@@ -1,11 +1,11 @@
-<% if @cart_items %>
-  <% @cart_items.each do |cart_item| %>
+<% if @cart_items.data.count > 0 %>
+  <% @cart_items.data.each do |item, quantity| %>
     <div class="cart-item">
       <div class="item">
-        <%= cart_item.name %>
+        <%= item.name %>
       </div>
       <div class="quantity">
-        <%= cart_item.quantity %>
+        <%= quantity %>
       </div>
     </div>
   <% end %>

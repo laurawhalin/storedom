@@ -44,4 +44,12 @@ class CartTest < ActiveSupport::TestCase
 
     assert_equal 1, cart.data[item]
   end
+
+  test "existing cart from session can be passed to create a new cart" do
+    old_cart = {'1' => 1}
+    item = Item.create(name: "blah", description: "dblah")
+    cart = Cart.new(old_cart)
+
+    assert_equal 1, cart.data[item]
+  end
 end
