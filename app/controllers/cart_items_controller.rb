@@ -1,6 +1,6 @@
 class CartItemsController < ApplicationController
   def index
-    #@cart_items = Cart.new(session[:cart])
+    # @cart_items = Cart.new(session[:cart])
   end
 
   def create

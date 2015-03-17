@@ -6,6 +6,7 @@ class Cart
   end
 
   def add_item(id)
-    @data[id] += 1
+    item = Item.find(id)
+    @data[item] += 1
   end
 end
