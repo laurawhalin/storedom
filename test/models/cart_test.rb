@@ -44,4 +44,15 @@ class CartTest < ActiveSupport::TestCase
 
     assert_equal 1, cart.data[item]
   end
+
+  test "adding item to cart updates session cart" do
+    item = Item.create(name: "blah", description: "dhslkfjd")
+    cart = Cart.new
+    cart.add_item(item.id)
+    result = cart.update_session_cart
+    item_id = item.id
+    expected_hash = { item_id => 1 }
+
+    assert_equal expected_hash, result
+  end
 end

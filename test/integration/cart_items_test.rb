@@ -9,7 +9,6 @@ class CartItemsTest < ActionDispatch::IntegrationTest
   end
 
   test "an item can be added to a cart" do
-    skip
     4.times { |i| Item.create(name: "thing#{i}", description: "stuff you want to buy")}
     visit '/'
 
